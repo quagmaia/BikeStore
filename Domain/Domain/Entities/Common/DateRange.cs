@@ -1,11 +1,29 @@
 ﻿using System;
 
-namespace Domain.Entities
+namespace Domain.Entities.Common
 {
     public class DateRange
     {
-        public DateTimeOffset StartsOn { get; set; }
-        public DateTimeOffset EndsOn { get; set; }
+        public readonly DateTimeOffset StartsOn;
+        public readonly DateTimeOffset EndsOn;
+        public const string DisplayFormatInUtc = "u";
+
+        public DateRange(DateTimeOffset startsOn, DateTimeOffset endsOn)
+        {
+            StartsOn = startsOn;
+            EndsOn = endsOn;
+            SanityCheck();
+        }
+
+        public override string ToString() => ToString(DisplayFormatInUtc);
+
+        public string ToString(string format) =>
+            $"{StartsOn.ToString(format)} - {EndsOn.ToString(format)}";
+
+        public bool Equals(DateRange other)
+        {
+            return StartsOn.Equals(other.StartsOn) && EndsOn.Equals(other.EndsOn);
+        }
 
         public bool Overlaps(DateRange other)
         {
@@ -45,9 +63,13 @@ namespace Domain.Entities
             return coversOtherStart && coversOtherEnd;
         }
 
-        public bool Equals(DateRange other)
+        private void SanityCheck()
         {
-            return StartsOn.Equals(other.StartsOn) && EndsOn.Equals(other.EndsOn);
+            if (StartsOn < EndsOn)
+            {
+                return;
+            }
+            throw new Exception($"Start {StartsOn} must be before end {EndsOn}");
         }
     }
 }
