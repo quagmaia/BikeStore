@@ -3,6 +3,7 @@ using System;
 
 namespace Domain.Entities
 {
+    [Serializable]
     public class Discount : IQueryableEntity
     {
         public Guid Id { get; set; }

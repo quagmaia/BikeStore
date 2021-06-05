@@ -2,6 +2,7 @@
 
 namespace Domain.Entities.Common
 {
+    [Serializable]
     public class DateRange
     {
         public readonly DateTimeOffset StartsOn;

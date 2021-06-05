@@ -1,8 +1,11 @@
 ﻿using Domain.Entities.Common;
+using Domain.Entities.Humans;
 using System;
+using System.Collections.Generic;
 
 namespace Domain.Entities
 {
+    [Serializable]
     public class Sale : IQueryableEntity
     {
         public Guid Id { get; set; }

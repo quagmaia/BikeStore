@@ -1,7 +1,7 @@
 ﻿using Domain.Entities.Common;
 using System;
 
-namespace Domain.Entities
+namespace Domain.Entities.Humans
 {
     public abstract class Human : IQueryableEntity
     {
