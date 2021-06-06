@@ -7,10 +7,10 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Popups\ChangeDirectory.xaml.cs">
+    <Compile Update="Popups\Popup.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Popups\Popup.xaml.cs">
+    <Compile Update="Popups\ProductEditor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -18,10 +18,10 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Popups\ChangeDirectory.xaml">
+    <Page Update="Popups\Popup.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Popups\Popup.xaml">
+    <Page Update="Popups\ProductEditor.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

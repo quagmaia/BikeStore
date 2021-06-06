@@ -30,9 +30,9 @@ namespace Domain.Entities.Humans
             }
         }
 
-        public Salesperson()
+        public Salesperson(Guid? id = null)
         {
-            Id = Guid.NewGuid();
+            Id = id ?? Guid.NewGuid();
         }
 
         public bool Matches(Salesperson other)

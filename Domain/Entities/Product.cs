@@ -17,9 +17,9 @@ namespace Domain.Entities
         public bool Equals(Product other) => Id.Equals(other.Id);
         public override int GetHashCode() => Id.GetHashCode();
 
-        public Product()
+        public Product(Guid? id = null)
         {
-            Id = Guid.NewGuid();
+            Id = id ?? Guid.NewGuid();
         }
 
         public bool Matches(Product other)

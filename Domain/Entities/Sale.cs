@@ -16,9 +16,9 @@ namespace Domain.Entities
         public bool Equals(Sale other) => Id.Equals(other.Id);
         public override int GetHashCode() => Id.GetHashCode();
 
-        public Sale()
+        public Sale(Guid? id = null)
         {
-            Id = Guid.NewGuid();
+            Id = id ?? Guid.NewGuid();
         }
 
     }

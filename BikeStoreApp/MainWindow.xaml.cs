@@ -87,8 +87,22 @@ namespace BikeStoreApp
             {
                MessageBox.Show($"Save failed!\n {ex}", "Dangit!", MessageBoxButton.OK);
             }
+
+            MessageBox.Show($"Save succeeded!", "Woo hoo!", MessageBoxButton.OK);
         }
 
+        private void ProductsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var productEditor = new ProductEditor(Controller); 
+            
+            var popupConfig = new PopupConfig()
+            {
+                Content = productEditor,
+                ConfirmVisibility = Visibility.Hidden
+            };
+            var popup = new Popup(popupConfig);
+            popup.Show();
 
+        }
     }
 }

@@ -12,9 +12,9 @@ namespace Domain.Entities
         public override bool Equals(object obj) => obj is Discount other && Equals(other);
         public bool Equals(Discount other) => Id.Equals(other.Id);
         public override int GetHashCode() => Id.GetHashCode();
-        public Discount()
+        public Discount(Guid? id = null)
         {
-            Id = Guid.NewGuid();
+            Id = id ?? Guid.NewGuid();
         }
     }
 }

@@ -10,9 +10,9 @@ namespace Domain.Entities.Humans
         public bool Equals(Customer other) => Id.Equals(other.Id);
         public override int GetHashCode() => Id.GetHashCode();
 
-        public Customer()
+        public Customer(Guid? id = null)
         {
-            Id = Guid.NewGuid();
+            Id = id ?? Guid.NewGuid();
         }
     }
 }
