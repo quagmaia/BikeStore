@@ -15,13 +15,21 @@ namespace Persistence
 
             if (File.Exists(path))
             {
-                return File.ReadAllText(path);
+                try
+                {
+                    var text = File.ReadAllText(path);
+                    return text;
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine(e);
+                }
             }
             else
             {
                 File.Create(path);
-                return string.Empty;
             }
+            return string.Empty;
         }
 
         internal static void Write(string fileName, string contents)

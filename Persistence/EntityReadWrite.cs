@@ -19,7 +19,7 @@ namespace Persistence
 
     public class EntityReadWrite<T> : IEntityReadWrite<T> where T : IQueryableEntity
     {
-        public Dictionary<Guid, T> Entities { get; private set; }
+        public Dictionary<Guid, T> Entities { get; private set; } = new Dictionary<Guid, T>();
         public FileNames FileName { get; }
 
         private readonly Action<ReadWriteEvent<T>> RaiseEvent;
@@ -85,8 +85,15 @@ namespace Persistence
         private Dictionary<Guid, T> ReadAll()
         {
             var str = FileIo.Read(FileName.ToString());
-            var deserialized = JsonSerializer.Deserialize(str, typeof(List<T>)) as List<T>;
-            Entities = deserialized.ToDictionary(e => e.Id, e => e);
+            try
+            {
+                var deserialized = JsonSerializer.Deserialize(str, typeof(List<T>)) as List<T>;
+                Entities = deserialized.ToDictionary(e => e.Id, e => e);
+            }
+            catch (JsonException e)
+            {
+                Console.WriteLine($"Could not parse {FileName}");
+            }
             return Entities;
         }
     }

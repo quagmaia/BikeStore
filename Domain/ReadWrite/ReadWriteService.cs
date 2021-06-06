@@ -23,7 +23,7 @@ namespace Domain.ReadWrite
             = new EntityReadWrite<Salesperson>(FileNames.Salespeople, ReadWriteEventHandler.Handle);
 
         public static void Reload()
-            {
+        {
             ProductRw = new EntityReadWrite<Product>(FileNames.Products, ReadWriteEventHandler.Handle);
             DiscountRw = new EntityReadWrite<Discount>(FileNames.Discounts, ReadWriteEventHandler.Handle);
             SaleRw = new EntityReadWrite<Sale>(FileNames.Sales, ReadWriteEventHandler.Handle);

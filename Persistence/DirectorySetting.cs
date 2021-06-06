@@ -26,7 +26,12 @@ namespace Persistence
             {
                 throw new BikeException("Must give a valid directory!");
             }
-            ConfigurationManager.AppSettings.Set(DirectorySettingName, directory);
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.AppSettings.Settings.Clear();
+            config.AppSettings.Settings.Add(DirectorySettingName, directory);
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
+            Console.WriteLine($"New directory: {directory}");
         }
 
     }
