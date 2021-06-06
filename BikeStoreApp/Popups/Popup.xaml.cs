@@ -21,7 +21,8 @@ namespace BikeStoreApp.Popups
         public Popup(PopupConfig config)
         {
             Config = config;
-            InitializeComponent();
+            InitializeComponent(); 
+            ImplementConfiguration();
         }
 
         public void ImplementConfiguration()
@@ -30,33 +31,34 @@ namespace BikeStoreApp.Popups
             ConfirmBtn.Visibility = Config.ConfirmVisibility;
 
             BackBtn.Content = Config.BackText;
-            BackBtn.Visibility = Config.BackVisibility;
+
+            Grid.SetColumn(Config.Content, 0);
+            Grid.SetColumnSpan(Config.Content, 2);
+            Grid.SetRow(Config.Content, 0);
+            Config.Content.Focus();
+            Config.Content.Visibility = Visibility.Visible;
+            PopupGrid.Children.Add(Config.Content);
         }
 
         private void ConfirmBtn_Click(object sender, RoutedEventArgs e)
         {
             if (Config.ConfirmCallback != null)
             {
-                Config.ConfirmCallback.Invoke(sender, e);
+                try
+                {
+                    Config.ConfirmCallback.Invoke(sender, e);
+                    Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show($"{ex}", "Update failed!", MessageBoxButton.OK);
+                }
             }
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (Config.BackCallback != null)
-            {
-                Config.BackCallback.Invoke(sender, e);
-            }
+            Close();
         }
-    }
-
-    public class PopupConfig
-    {
-        public string ConfirmText { get; set; } = "Confirm";
-        public string BackText { get; set; } = "Cancel";
-        public Visibility ConfirmVisibility { get; set; } = Visibility.Hidden;
-        public Visibility BackVisibility { get; set; } = Visibility.Visible;
-        public Action<object, RoutedEventArgs> ConfirmCallback { get; set; }
-        public Action<object, RoutedEventArgs> BackCallback { get; set; }
     }
 }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Popup" Height="400" Width="600">
 
-    <Grid >
+    <Grid x:Name="PopupGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="300"/>
             <RowDefinition Height="100*"/>
@@ -17,8 +17,6 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Control x:Name="PopupContent" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/>
-        
         <Button x:Name="ConfirmBtn" Grid.Column="0" Grid.Row="1" Height="50" Margin="20,0,20,0" Content="Confirm" FontSize="18" 
                 Click="ConfirmBtn_Click"/>
         <Button x:Name="BackBtn" Grid.Column="1" Grid.Row="1" Height="50" Margin="20,0,20,0" Content="Cancel" FontSize="18" 

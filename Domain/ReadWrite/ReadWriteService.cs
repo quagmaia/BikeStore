@@ -21,5 +21,23 @@ namespace Domain.ReadWrite
 
         public static IEntityReadWrite<Salesperson> SalespersonRw 
             = new EntityReadWrite<Salesperson>(FileNames.Salespeople, ReadWriteEventHandler.Handle);
+
+        public static void Reload()
+            {
+            ProductRw = new EntityReadWrite<Product>(FileNames.Products, ReadWriteEventHandler.Handle);
+            DiscountRw = new EntityReadWrite<Discount>(FileNames.Discounts, ReadWriteEventHandler.Handle);
+            SaleRw = new EntityReadWrite<Sale>(FileNames.Sales, ReadWriteEventHandler.Handle);
+            CustomerRw = new EntityReadWrite<Customer>(FileNames.Customers, ReadWriteEventHandler.Handle);
+            SalespersonRw  = new EntityReadWrite<Salesperson>(FileNames.Salespeople, ReadWriteEventHandler.Handle);
+        }
+
+        public static void Save()
+        {
+            ProductRw.CommitChanges();
+            DiscountRw.CommitChanges();
+            SaleRw.CommitChanges();
+            CustomerRw.CommitChanges();
+            SalespersonRw.CommitChanges();
+        }
     }
 }

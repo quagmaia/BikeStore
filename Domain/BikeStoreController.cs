@@ -23,16 +23,23 @@ namespace Domain
 
         }
 
-        public void Save()
-        {
-            ReadWriteService.ProductRw.CommitChanges();
-            ReadWriteService.DiscountRw.CommitChanges();
-            ReadWriteService.SaleRw.CommitChanges();
-            ReadWriteService.CustomerRw.CommitChanges();
-            ReadWriteService.SalespersonRw.CommitChanges();
-        }
+        public void Save() => ReadWriteService.Save();
+
+        public void Reload() => ReadWriteService.Reload();
 
         public string GetWorkingDirectory() => DirectorySetting.GetWorkingDirectory();
+
+        public string TryGetWorkingDirectory()
+        {
+            try
+            {
+                return GetWorkingDirectory();
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
+        }
 
         public void SetWorkingDirectory(string newDirectory) => DirectorySetting.SetWorkingDirectory(newDirectory);
 
