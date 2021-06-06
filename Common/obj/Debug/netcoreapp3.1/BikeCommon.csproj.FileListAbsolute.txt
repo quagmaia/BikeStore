@@ -1,0 +1,9 @@
+C:\Code\BikeStore\Common\bin\Debug\netcoreapp3.1\BikeCommon.deps.json
+C:\Code\BikeStore\Common\bin\Debug\netcoreapp3.1\BikeCommon.dll
+C:\Code\BikeStore\Common\bin\Debug\netcoreapp3.1\BikeCommon.pdb
+C:\Code\BikeStore\Common\obj\Debug\netcoreapp3.1\BikeCommon.csproj.AssemblyReference.cache
+C:\Code\BikeStore\Common\obj\Debug\netcoreapp3.1\BikeCommon.AssemblyInfoInputs.cache
+C:\Code\BikeStore\Common\obj\Debug\netcoreapp3.1\BikeCommon.AssemblyInfo.cs
+C:\Code\BikeStore\Common\obj\Debug\netcoreapp3.1\BikeCommon.csproj.CoreCompileInputs.cache
+C:\Code\BikeStore\Common\obj\Debug\netcoreapp3.1\BikeCommon.dll
+C:\Code\BikeStore\Common\obj\Debug\netcoreapp3.1\BikeCommon.pdb

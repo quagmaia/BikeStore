@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace Domain.Entities.Common
+namespace BikeCommon
 {
     [Serializable]
-    public class DateRange
+    public class DateRange : IEquatable<DateRange>
     {
         public readonly DateTimeOffset StartsOn;
         public readonly DateTimeOffset EndsOn;
@@ -18,13 +18,13 @@ namespace Domain.Entities.Common
 
         public override string ToString() => ToString(DisplayFormatInUtc);
 
-        public string ToString(string format) =>
-            $"{StartsOn.ToString(format)} - {EndsOn.ToString(format)}";
+        public string ToString(string format) => $"{StartsOn.ToString(format)} - {EndsOn.ToString(format)}";
 
-        public bool Equals(DateRange other)
-        {
-            return StartsOn.Equals(other.StartsOn) && EndsOn.Equals(other.EndsOn);
-        }
+        public override bool Equals(object obj) => obj is DateRange other && Equals(other); 
+        
+        public bool Equals(DateRange other) => StartsOn.Equals(other.StartsOn) && EndsOn.Equals(other.EndsOn);
+        
+        public override int GetHashCode() => HashCode.Combine(StartsOn, EndsOn);
 
         public bool Overlaps(DateRange other)
         {

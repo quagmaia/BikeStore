@@ -12,4 +12,9 @@
     <PackageReference Include="System.Threading" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\BikeCommon.csproj" />
+    <ProjectReference Include="..\..\Persistence\Persistence.csproj" />
+  </ItemGroup>
+
 </Project>

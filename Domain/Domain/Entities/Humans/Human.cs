@@ -1,4 +1,4 @@
-﻿using Domain.Entities.Common;
+﻿using BikeCommon;
 using System;
 
 namespace Domain.Entities.Humans

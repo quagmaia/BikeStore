@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Domain.Entities.Common
+namespace BikeCommon
 {
     public interface IQueryableEntity
     {
