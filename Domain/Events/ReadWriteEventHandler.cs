@@ -18,8 +18,8 @@ namespace Domain.Events
                 return;
             }
 
-            var upstreamDiscounts = ReadWriteService.DiscountRw.Entities.Values.Where(e => e.Product.Equals(product));
-            var upstreamSales = ReadWriteService.SaleRw.Entities.Values.Where(e => e.Product.Equals(product));
+            var upstreamDiscounts = ReadWriteService.DiscountRw.Entities.Values.Where(e => e.Product?.Equals(product) ?? false).ToList();
+            var upstreamSales = ReadWriteService.SaleRw.Entities.Values.Where(e => e.Product?.Equals(product) ?? false).ToList();
 
             switch (e.Action)
             {
@@ -73,8 +73,8 @@ namespace Domain.Events
             }
 
             var person = e.Entity;
-            var upstreamEmployees = ReadWriteService.SalespersonRw.Entities.Values.Where(e => e.Manager.Equals(person));
-            var upstreamSales = ReadWriteService.SaleRw.Entities.Values.Where(e => e.Salesperson.Equals(person));
+            var upstreamEmployees = ReadWriteService.SalespersonRw.Entities.Values.Where(e => e.Manager?.Equals(person) ?? false).ToList();
+            var upstreamSales = ReadWriteService.SaleRw.Entities.Values.Where(e => e.Salesperson?.Equals(person) ?? false).ToList();
 
             switch (e.Action)
             {
@@ -116,7 +116,7 @@ namespace Domain.Events
             }
 
             var customer = e.Entity;
-            var upstreamSales = ReadWriteService.SaleRw.Entities.Values.Where(e => e.Customer.Equals(customer));
+            var upstreamSales = ReadWriteService.SaleRw.Entities.Values.Where(e => e.Customer?.Equals(customer) ?? false).ToList();
             switch (e.Action)
             {
                 case ReadWriteAction.Updated:

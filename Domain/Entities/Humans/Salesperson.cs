@@ -17,7 +17,7 @@ namespace Domain.Entities.Humans
         }
 
         public override bool Equals(object obj) => obj is Salesperson other && Equals(other);
-        public bool Equals(Salesperson other) => Id.Equals(other.Id);
+        public bool Equals(Salesperson other) => other != null && Id.Equals(other.Id);
         public override int GetHashCode() => Id.GetHashCode();
 
         private Salesperson _Manager { get; set; }

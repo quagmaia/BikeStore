@@ -69,6 +69,17 @@ namespace Domain
                 SaleDate = DateTimeOffset.Now.AddDays(-30)
             };
 
+            foreach (var p in Salepeople.ToList())
+            {
+                Delete(p.Value);
+            }
+
+            foreach (var p in Products)
+            {
+                Delete(p.Value);
+            }
+
+
             Add(bike);
             Add(thing);
             Add(person);

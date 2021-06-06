@@ -13,7 +13,7 @@ namespace Domain.Entities
         public int QtyOnHand { get; set; }
         public decimal CommissionFactor { get; set; }
         public override bool Equals(object obj) => obj is Product other && Equals(other);
-        public bool Equals(Product other) => Id.Equals(other.Id);
+        public bool Equals(Product other) => other != null && Id.Equals(other.Id);
         public override int GetHashCode() => Id.GetHashCode();
 
         public Product(Guid? id = null)

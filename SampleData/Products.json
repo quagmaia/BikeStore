@@ -1,1 +1,1 @@
-{"Entities":[{"Id":"674f7aab-bc40-469e-b5e5-9e3158e06f04","Name":"CoolBike","Manufacturer":"BikeBros Inc","PurchasePrice":120,"SalePrice":209.95,"QtyOnHand":3,"CommissionFactor":0.3}]}
+{"Entities":[{"Name":"CoolBike","Manufacturer":"BikeBros Inc","PurchasePrice":120.0,"SalePrice":209.95,"QtyOnHand":3,"CommissionFactor":0.3,"Id":"28242e3a-fc04-4936-bbc8-c6d013f2d2ad"}]}

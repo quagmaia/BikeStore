@@ -1,1 +1,1 @@
-{"Entities":[]}
+{"Entities":[{"Product":null,"DiscountFactor":0.10,"Id":"07d800f3-fc4f-4cf0-a186-bba7a8f7d653"},{"Product":null,"DiscountFactor":0.10,"Id":"05436a66-1c5b-4acd-b126-26cb2ca1042d"},{"Product":{"Name":"CoolBike","Manufacturer":"BikeBros Inc","PurchasePrice":120.0,"SalePrice":209.95,"QtyOnHand":3,"CommissionFactor":0.3,"Id":"28242e3a-fc04-4936-bbc8-c6d013f2d2ad"},"DiscountFactor":0.10,"Id":"89ce196e-0bd9-454d-b4d8-400c2abc04fc"}]}
