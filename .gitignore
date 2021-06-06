@@ -45,6 +45,7 @@
 *.log
 *.svclog
 *.scc
+*.suo
 
 # Visual C++ cache files
 ipch/
