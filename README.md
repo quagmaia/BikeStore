@@ -6,4 +6,5 @@ Persistence layer saves data as json.
 UI layer is a WPF console application. It is missing a lot but right now you san save or change your active directory
 
 Domain layer handles most of the logic, including validation
- 
+
+User ---> BikeStoreApp ---> Domain ---> Persistence ---> File System
