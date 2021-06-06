@@ -5,6 +5,7 @@ using BikeCommon;
 using Domain.ReadWrite;
 using System.Linq;
 using System;
+using Persistence;
 
 namespace Domain
 {
@@ -30,6 +31,10 @@ namespace Domain
             ReadWriteService.CustomerRw.CommitChanges();
             ReadWriteService.SalespersonRw.CommitChanges();
         }
+
+        public string GetWorkingDirectory() => DirectorySetting.GetWorkingDirectory();
+
+        public void SetWorkingDirectory(string newDirectory) => DirectorySetting.SetWorkingDirectory(newDirectory);
 
         public void AddProduct(Product product)
         {
@@ -97,10 +102,10 @@ namespace Domain
 
         public void Delete(Customer customer) => ReadWriteService.CustomerRw.Delete(customer);
 
-        private Exception DuplicateProduct(Product product)
-            => new Exception($"Product {product.Name} {product.Manufacturer} already exists!");
+        private BikeException DuplicateProduct(Product product)
+            => new BikeException($"Product {product.Name} {product.Manufacturer} already exists!");
 
-        private Exception DuplicatePerson(Salesperson person)
-            => new Exception($"Product {person.FormattedName} already exists!");
+        private BikeException DuplicatePerson(Salesperson person)
+            => new BikeException($"Product {person.FormattedName} already exists!");
     }
 }

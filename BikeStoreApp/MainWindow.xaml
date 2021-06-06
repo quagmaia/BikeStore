@@ -8,15 +8,22 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="400*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="600"/>
         </Grid.ColumnDefinitions>
 
+        <Button x:Name="SaveBtn" Grid.Column="0" Grid.Row="0" Height="50" Margin="20,25,20,25" Content="Save" FontSize="18" 
+                Click="SaveBtn_Click"/>
+
+        <StackPanel Grid.Column="2" Grid.Row="0" Orientation="Horizontal">
+            <Button x:Name="ChangeDirectoryBtn" Height="50" Width="200" Margin="20,0,20,0" Content="Update Directory" FontSize="18" 
+                    Click="ChangeDirectoryBtn_Click" />
+            <Label x:Name="DirectoryLbl" Height="50" Margin="20,0,20,0" BorderThickness="1" BorderBrush="Black" 
+                   HorizontalContentAlignment="Stretch" FontSize="12" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="300"/>
+        </StackPanel>
     </Grid>
 </Window>

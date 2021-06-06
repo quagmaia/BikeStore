@@ -6,12 +6,11 @@ namespace Persistence
 {
     public static class FileIo
     {
-        private const string DirectorySetting = "Directory";
         private const string FileExt = ".json";
 
         internal static string Read(string fileName)
         {
-            var directory = GetDirectory();
+            var directory = DirectorySetting.GetWorkingDirectory();
             var path = $"{directory}{Path.DirectorySeparatorChar}{fileName}{FileExt}";
 
             if (File.Exists(path))
@@ -27,21 +26,13 @@ namespace Persistence
 
         internal static void Write(string fileName, string contents)
         {
-            var directory = GetDirectory();
-            var path = $"{directory}{Path.DirectorySeparatorChar}{fileName}{FileExt}";
+            var directory = DirectorySetting.GetWorkingDirectory();
+
+            var path = Path.EndsInDirectorySeparator(directory)
+                ? $"{directory}{fileName}{FileExt}"
+                : $"{directory}{Path.DirectorySeparatorChar}{fileName}{FileExt}";
+
             File.WriteAllText(path, contents);
-        }
-
-        private static string GetDirectory()
-        {
-            var appSettings = ConfigurationManager.AppSettings;
-            var directory = appSettings[DirectorySetting];
-            if (string.IsNullOrWhiteSpace(directory))
-            {
-                throw new Exception("No directory configured!");
-            }
-
-            return directory;
         }
 
     }
