@@ -5,9 +5,8 @@ using System;
 namespace Domain.Entities
 {
     [Serializable]
-    public class Sale : IQueryableEntity, IEquatable<Sale>
+    public class Sale : QuertableEntity, IEquatable<Sale>
     {
-        public Guid Id { get; set; }
         public Product Product { get; set; }
         public Salesperson Salesperson { get; set; }
         public Customer Customer { get; set; }

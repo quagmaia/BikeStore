@@ -4,9 +4,8 @@ using System;
 namespace Domain.Entities
 {
     [Serializable]
-    public class Discount : IQueryableEntity, IEquatable<Discount>
+    public class Discount : QuertableEntity, IEquatable<Discount>
     {
-        public Guid Id { get; set; }
         public Product Product { get; set; }
         public decimal DiscountFactor { get; set; }
         public override bool Equals(object obj) => obj is Discount other && Equals(other);

@@ -1,5 +1,4 @@
 ﻿using System;
-using BikeCommon;
 
 namespace Domain.Entities.Humans
 {
@@ -28,11 +27,6 @@ namespace Domain.Entities.Humans
             {
                 throw new Exception($"{FormattedName} cannot be their own manager!");
             }
-        }
-
-        public Salesperson(Guid? id = null)
-        {
-            Id = id ?? Guid.NewGuid();
         }
 
         public bool Matches(Salesperson other)

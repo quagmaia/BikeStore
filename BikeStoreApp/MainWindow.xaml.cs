@@ -29,6 +29,17 @@ namespace BikeStoreApp
             InitializeComponent();
             Controller = new BikeStoreController();
             UpdateDirectory();
+
+            try
+            {
+                //attempt to load data
+                Controller.Reload();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Load failed! Double check that your json files are in a good state.\n\n {ex}", "Dangit!", MessageBoxButton.OK);
+                Close();
+            }
         }
 
         private void UpdateDirectory()
@@ -85,7 +96,8 @@ namespace BikeStoreApp
             }
             catch (Exception ex)
             {
-               MessageBox.Show($"Save failed!\n {ex}", "Dangit!", MessageBoxButton.OK);
+               MessageBox.Show($"Save failed!\n\n {ex}", "Dangit!", MessageBoxButton.OK);
+                return;
             }
 
             MessageBox.Show($"Save succeeded!", "Woo hoo!", MessageBoxButton.OK);

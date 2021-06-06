@@ -3,9 +3,8 @@ using System;
 
 namespace Domain.Entities.Humans
 {
-    public abstract class Human : IQueryableEntity
+    public abstract class Human : QuertableEntity
     {
-        public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FormattedName => $"{LastName}, {FirstName}";

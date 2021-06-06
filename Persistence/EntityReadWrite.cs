@@ -3,7 +3,8 @@ using Persistence.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.Json;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Persistence
 {
@@ -40,7 +41,8 @@ namespace Persistence
 
         public void CommitChanges()
         {
-            var str = JsonSerializer.Serialize(Entities);
+            var entities = new QueryableEntitySet<T>() { Entities = Entities.Values.ToList() };
+            var str = JsonConvert.SerializeObject(entities);
             FileIo.Write(FileName.ToString(), str);
 
             ReadAll();
@@ -85,15 +87,12 @@ namespace Persistence
         private Dictionary<Guid, T> ReadAll()
         {
             var str = FileIo.Read(FileName.ToString());
-            try
+            if (string.IsNullOrEmpty(str))
             {
-                var deserialized = JsonSerializer.Deserialize(str, typeof(List<T>)) as List<T>;
-                Entities = deserialized.ToDictionary(e => e.Id, e => e);
+                return Entities;
             }
-            catch (JsonException e)
-            {
-                Console.WriteLine($"Could not parse {FileName}");
-            }
+            var deserialized = JsonConvert.DeserializeObject(str, typeof(QueryableEntitySet<T>)) as QueryableEntitySet<T>;
+            Entities = deserialized.Entities?.ToDictionary(e => e.Id, e => e) ?? new Dictionary<Guid, T>();
             return Entities;
         }
     }

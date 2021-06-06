@@ -4,9 +4,8 @@ using System;
 namespace Domain.Entities
 {
     [Serializable]
-    public class Product : IQueryableEntity, IEquatable<Product>
+    public class Product : QuertableEntity, IEquatable<Product>
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Manufacturer { get; set; }
         public decimal PurchasePrice { get; set; }
