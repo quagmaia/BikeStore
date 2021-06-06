@@ -1,0 +1,45 @@
+{
+	"a5614a72-7c6d-4767-a299-7af5df22c818": {
+		"Id": "a5614a72-7c6d-4767-a299-7af5df22c818",
+		"Product": {
+			"Id": "e96a8da1-c101-44bd-bbd2-f5a7644cef29",
+			"Name": "CoolBike",
+			"Manufacturer": "BikeBros Inc",
+			"PurchasePrice": 120,
+			"SalePrice": 209.95,
+			"QtyOnHand": 3,
+			"CommissionFactor": 0.3
+		},
+		"Salesperson": {
+			"TerminationDate": "0001-01-01T00:00:00+00:00",
+			"Manager": {
+				"TerminationDate": "0001-01-01T00:00:00+00:00",
+				"Manager": null,
+				"Id": "bfe7875b-f135-4d95-b033-5c7069f5a100",
+				"FirstName": "Jerry",
+				"LastName": "Seinfeld",
+				"FormattedName": "Seinfeld, Jerry",
+				"Address": "123 Ln",
+				"Phone": "123",
+				"StartDate": "0001-01-01T00:00:00+00:00"
+			},
+			"Id": "bad3679b-3ce0-4e83-a097-eb6186311334",
+			"FirstName": "George",
+			"LastName": "Costanza",
+			"FormattedName": "Costanza, George",
+			"Address": "456 Ln",
+			"Phone": "456",
+			"StartDate": "0001-01-01T00:00:00+00:00"
+		},
+		"Customer": {
+			"Id": "dfe0165d-192f-4a26-b517-7638c97f0919",
+			"FirstName": "Mysterious",
+			"LastName": "Very",
+			"FormattedName": "Very, Mysterious",
+			"Address": "It's a Mystery",
+			"Phone": "It's also a Mystery",
+			"StartDate": "0001-01-01T00:00:00+00:00"
+		},
+		"SaleDate": "2021-05-07T15:24:27.5124844-04:00"
+	}
+}
