@@ -29,5 +29,15 @@ namespace Domain.Entities.Humans
                 throw new Exception($"{FormattedName} cannot be their own manager!");
             }
         }
+
+        public Salesperson()
+        {
+            Id = Guid.NewGuid();
+        }
+
+        public bool Matches(Salesperson other)
+        {
+            return other != null && FormattedName.Equals(other.FormattedName);
+        }
     }
 }

@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Domain.Entities.Common;
 using System;
+using BikeCommon;
 
 namespace DomainTest
 {

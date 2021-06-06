@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{65261868-993E-4ADC-AC3C-AD64C3705024}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainTest", "..\DomainTest\DomainTest\DomainTest.csproj", "{AF82A90D-413D-4DDC-88B1-9C538ED5E598}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "..\DomainTest\DomainTest\Test.csproj", "{AF82A90D-413D-4DDC-88B1-9C538ED5E598}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "..\Persistence\Persistence.csproj", "{2933E653-7A2A-4E87-AF3A-C46D8A1484BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{574DEE9C-7B3B-4DF1-9C84-1D9260E3EE39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeCommon", "..\Common\BikeCommon.csproj", "{B74696CD-9824-42E2-9201-917C0A23073C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeCommon", "..\Common\BikeCommon.csproj", "{B74696CD-9824-42E2-9201-917C0A23073C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStoreApp", "..\BikeStoreApp\BikeStoreApp.csproj", "{EF66E1DD-F6F9-4A3A-8216-A961BA20F396}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{B74696CD-9824-42E2-9201-917C0A23073C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B74696CD-9824-42E2-9201-917C0A23073C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B74696CD-9824-42E2-9201-917C0A23073C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF66E1DD-F6F9-4A3A-8216-A961BA20F396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF66E1DD-F6F9-4A3A-8216-A961BA20F396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF66E1DD-F6F9-4A3A-8216-A961BA20F396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF66E1DD-F6F9-4A3A-8216-A961BA20F396}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

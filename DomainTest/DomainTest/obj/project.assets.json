@@ -4910,6 +4910,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "BikeCommon >= 1.0.0",
       "Domain >= 1.0.0",
       "MSTest.TestAdapter >= 2.2.4",
       "MSTest.TestFramework >= 2.2.4",
@@ -4927,9 +4928,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Code\\BikeStore\\DomainTest\\DomainTest\\DomainTest.csproj",
-      "projectName": "DomainTest",
-      "projectPath": "C:\\Code\\BikeStore\\DomainTest\\DomainTest\\DomainTest.csproj",
+      "projectUniqueName": "C:\\Code\\BikeStore\\DomainTest\\DomainTest\\Test.csproj",
+      "projectName": "Test",
+      "projectPath": "C:\\Code\\BikeStore\\DomainTest\\DomainTest\\Test.csproj",
       "packagesPath": "C:\\Users\\rainb\\.nuget\\packages\\",
       "outputPath": "C:\\Code\\BikeStore\\DomainTest\\DomainTest\\obj\\",
       "projectStyle": "PackageReference",
@@ -4952,6 +4953,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Code\\BikeStore\\Common\\BikeCommon.csproj": {
+              "projectPath": "C:\\Code\\BikeStore\\Common\\BikeCommon.csproj"
+            },
             "C:\\Code\\BikeStore\\Domain\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Code\\BikeStore\\Domain\\Domain\\Domain.csproj"
             }

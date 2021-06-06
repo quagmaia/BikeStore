@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BZ/jLf6AIdfs25DHJJElJu55g+G1+Lft4YAC94W8x/QKx+6SQg+4AwdRN9J/uf1TRG/yysXgTKivSoLY+J17mQ==",
+  "dgSpecHash": "kmzoeSvzOPKSA/Otx95HGExjymAJ4NAPXBXpccDbk+yhNyOlelPpU7HqRr881XD+clsBDP4l4CIEHEDgGK/GtQ==",
   "success": true,
-  "projectFilePath": "C:\\Code\\BikeStore\\DomainTest\\DomainTest\\DomainTest.csproj",
+  "projectFilePath": "C:\\Code\\BikeStore\\DomainTest\\DomainTest\\Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rainb\\.nuget\\packages\\coverlet.collector\\3.0.3\\coverlet.collector.3.0.3.nupkg.sha512",
     "C:\\Users\\rainb\\.nuget\\packages\\microsoft.codecoverage\\16.10.0\\microsoft.codecoverage.16.10.0.nupkg.sha512",

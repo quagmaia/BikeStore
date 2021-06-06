@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\BikeCommon.csproj" />
     <ProjectReference Include="..\..\Domain\Domain\Domain.csproj" />
   </ItemGroup>
 
