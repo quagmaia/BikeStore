@@ -20,8 +20,66 @@ namespace Domain
 
         public BikeStoreController()
         {
+            /*
+            var bike = new Product()
+            {
+                Name = "CoolBike",
+                PurchasePrice = 120M,
+                SalePrice = 209.95M,
+                QtyOnHand = 3,
+                Manufacturer = "BikeBros Inc",
+                CommissionFactor = .3M
+            };
 
+            var thing = new Discount() {
+                DiscountFactor = .10M,
+                Product = bike
+            };
+
+            var person = new Salesperson()
+            {
+                FirstName = "Jerry",
+                LastName = "Seinfeld",
+                Address = "123 Ln",
+                Phone = "123"
+            };
+
+            var person2 = new Salesperson()
+            {
+                FirstName = "George",
+                LastName = "Costanza",
+                Address = "456 Ln",
+                Phone = "456",
+                Manager = person
+            };
+
+            var person3 = new Customer()
+            {
+                FirstName = "Mysterious",
+                LastName = "Very",
+                Address = "It's a Mystery",
+                Phone = "It's also a Mystery"
+            };
+
+            var sale = new Sale()
+            {
+                Product = bike,
+                Salesperson = person2,
+                Customer = person3,
+                SaleDate = DateTimeOffset.Now.AddDays(-30)
+            };
+
+            Add(bike);
+            Add(thing);
+            Add(person);
+            Add(person2);
+            Add(person3);
+            Add(sale);
+            Save();
+            */
         }
+
+        
 
         public void Save() => ReadWriteService.Save();
 
@@ -43,7 +101,7 @@ namespace Domain
 
         public void SetWorkingDirectory(string newDirectory) => DirectorySetting.SetWorkingDirectory(newDirectory);
 
-        public void AddProduct(Product product)
+        public void Add(Product product)
         {
             var newProductMatchesExisting = Products.Values.Any(p => p.Matches(product));
             if (newProductMatchesExisting)

@@ -37,8 +37,7 @@ namespace BikeStoreApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Load failed! Double check that your json files are in a good state.\n\n {ex}", "Dangit!", MessageBoxButton.OK);
-                Close();
+                MessageBox.Show($"Load failed! Try updating your directory or fixing your json files.\n\n {ex}", "Dangit!", MessageBoxButton.OK);
             }
         }
 
